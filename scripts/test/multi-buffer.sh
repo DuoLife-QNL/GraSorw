@@ -1,0 +1,6 @@
+/home/hongzheng/Codes/CLionProjects/IOE-SORW/build/dual-bucket/multi-buffer/O3/DualBucket_Node2Vec_FL > /home/hongzheng/Codes/CLionProjects/IOE-SORW/log/load-tradeoff/twitter/multi-buffer-compare/O3-compare/multi-buffer-4.log \
+&& /home/hongzheng/Codes/CLionProjects/IOE-SORW/build/dual-bucket/multi-buffer/O3/DualBucket_Node2Vec_FL > /home/hongzheng/Codes/CLionProjects/IOE-SORW/log/load-tradeoff/twitter/multi-buffer-compare/O3-compare/multi-buffer-5.log \
+&& /home/hongzheng/Codes/CLionProjects/IOE-SORW/build/dual-bucket/multi-buffer/O3/DualBucket_Node2Vec_FL > /home/hongzheng/Codes/CLionProjects/IOE-SORW/log/load-tradeoff/twitter/multi-buffer-compare/O3-compare/multi-buffer-6.log \
+&& /home/hongzheng/Codes/CLionProjects/IOE-SORW/build/dual-bucket/no-critical/O3/DualBucket_Node2Vec_FL > /home/hongzheng/Codes/CLionProjects/IOE-SORW/log/load-tradeoff/twitter/multi-buffer-compare/O3-compare/no-extend-4.log \
+&& /home/hongzheng/Codes/CLionProjects/IOE-SORW/build/dual-bucket/no-critical/O3/DualBucket_Node2Vec_FL > /home/hongzheng/Codes/CLionProjects/IOE-SORW/log/load-tradeoff/twitter/multi-buffer-compare/O3-compare/no-extend-5.log \
+&& /home/hongzheng/Codes/CLionProjects/IOE-SORW/build/dual-bucket/no-critical/O3/DualBucket_Node2Vec_FL > /home/hongzheng/Codes/CLionProjects/IOE-SORW/log/load-tradeoff/twitter/multi-buffer-compare/O3-compare/no-extend-6.log
