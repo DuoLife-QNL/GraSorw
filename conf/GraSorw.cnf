@@ -1,85 +1,32 @@
 # Commandline parameters override values in the configuration file.
 
 # GRAPH FILE
-## idmg
-file=/home/hongzheng/data/soc-LiveJournal1.txt.unDir
-#file=/home/hongzheng/data/twitter_rv.net.unDir
-#file=/home/hongzheng/data/twitter_rv.net.unDir.dorder.part.18
-#file=/home/hongzheng/data/youtube_edge.txt.unDir
-#file=/home/hongzheng/data/uk_edge.txt.unDir
-#file=/home/hongzheng/data/com-friendster.txt.unDir
-#file=/home/hongzheng/data/Kron29.txt.unDir
-#file=/mnt/data-ssd/graph-data/crawlweb/crawlweb.txt.unDir
-#file=/home/hongzheng/data/testData/testGraph.txt.unDir
-### synthetic graph
-#file=/mnt/data-ssd/graph-data/synthetic-graph/Circulant.txt.unDir
-#file=/mnt/data-ssd/graph-data/synthetic-graph/RandomGraph-p-0.000001.txt.unDir
+file=datasets/soc-LiveJournal1.txt.unDir
 
-#livejournal
+# livejournal
 num-vertices=4846609
-#twitter
-#num-vertices=41652230
-#uk
-#num-vertices=105153952
-#friendster
-#num-vertices=65608366
-#Kron29
-#num-vertices=276924598
-#CrawlWeb
-#num-vertices=3563602789
-#test graph
-#num-vertices=7
-## Synthetic Graph
-#Skewness
-#num-vertices=40000000
-
-
 
 # ENGINE
 blocksize_kb=20000
-#blocksize_kb=524288
-#blocksize_kb=99999999
-#uk
-#blocksize_kb=1048576
-#Kron29
-#blocksize_kb=1048576
-#CrawlWeb
-#blocksize_kb=104857600
-nmblocks=2
-nThreads=72
+nThreads=16
 
-# PLAIN_BUCKET-ORDER
-#bucket-th=3
-
-# NODE2VEC || Node2VecAR || LinkSCAN || PPR
-walk-length=5
-walks-per-vertex=2
+# RANDOM WALK
+walk-length=80
+walks-per-vertex=10
 
 # NODE2VEC
 p=1
 q=1
 
-# PPR
-starts-vertices-file=/home/hongzheng/Codes/CLionProjects/IOE-SORW/conf/PPRStarts/PPRStarts-LiveJournal-10.txt
-#starts-vertices-file=/home/hongzheng/Codes/CLionProjects/IOE-SORW/conf/PPRStarts/PPRStarts-CW-10.txt
+# PAGERANK
+starts-vertices-file=conf/PRStarts/PPRStarts-LiveJournal-100.txt
 decay-factor=0.85
-num-start-vertices=10
-
-# Node2VecAR || AUTOREGRESSIVE
-#alpha=0.2
-
-# METIS
-#graph-partition-method=metis
-#graph-partition-file=/home/hongzheng/data/soc-LiveJournal1.txt.unDir.toMetis.part.17
-#pre-partition-block-nums=17
+num-start-vertices=100
 
 # LOAD-TEST
-#load-test-output-file-dynamic=/home/hongzheng/Codes/CLionProjects/IOE-SORW/log/load-tradeoff/livejournal/on-demand-th-1-dynamic.csv
-load-test-output-file-static=/home/hongzheng/Codes/CLionProjects/IOE-SORW/log/paper/TrainLogs/LJ/deepwalk/full-load.csv
+#load-test-output-file-dynamic=conf/on-demand-th-0.csv
+#load-test-output-file-static=conf/on-demand-th-1.csv
 
 # ON-DEMAND-LOAD
-#ths-file-dynamic=/home/hongzheng/Codes/CLionProjects/IOE-SORW/conf/ths-all-0.txt
-ths-file-static=/home/hongzheng/Codes/CLionProjects/IOE-SORW/conf/ths-all-0.txt
-
-# BLOCK-UTILIZATION
-#block-uti-file=/home/hongzheng/Codes/CLionProjects/ IOE-SORW/log/block-uti/TW-OL.csv
+ths-file-dynamic=conf/ths/ths-all-0.txt
+ths-file-static=conf/ths/ths-all-0.txt
