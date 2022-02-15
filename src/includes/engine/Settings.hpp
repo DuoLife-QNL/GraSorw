@@ -12,7 +12,7 @@
 #define INFO 1
 
 /* The bi-block execution engine */
-#define BI_BLOCK 0
+#define BI_BLOCK 1
 /* The plain bucket execution engine */
 #define PLAIN_BUCKET 0
 /* The plain execution engine, including SOGW and SGSC */
@@ -21,8 +21,8 @@
 /* SGSC if set to 1, SOGW if set to 0 */
 #define STATICCACHE 0
 #endif
-/* The first-order random walk  engine */
-#define FIRST_ORDER_ENGINE 1
+/* The first-order random walk engine */
+#define FIRST_ORDER_ENGINE 0
 
 #if FIRST_ORDER_ENGINE
 /* Whether output the time cost metric, for example, the time of massive light vertex IO */
