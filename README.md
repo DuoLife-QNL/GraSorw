@@ -1,6 +1,6 @@
 # GraSorw
 
-GraSorw is a disk-based graph processing system designed for scalable second-order random walk tasks. 
+GraSorw is a disk-based graph processing system designed for scalable second-order random walk tasks.
 
 ## Quick Start
 
@@ -46,9 +46,9 @@ Meaning of arguments in `conf/GraSorw.cnf`:
 * Graph information
   * file: the input graph file
   * num-vertices: the total number of vertices in the input graph. This value can be retrieved from the output log when converting the original graph to undirected.
-  * blocksize_kb: the size of the current block and ancillary block in the engine in KiB. This is set for default sequential partitioning. 
+  * blocksize_kb: the size of the current block and ancillary block in the engine in KiB. This is set for default sequential partitioning.
 * Run-time configuration
-  * nThreads: number of threads during execution. Default value is the maximum thread number of your machine. 
+  * nThreads: number of threads during execution. Default value is the maximum thread number of your machine.
 * General random walk task settings
   * walk-length: the length of each walk. In PageRank tasks, this represents the maximum length of each walk.
   * walks-per-vertex: the number of walks starting from each activated vertex.
@@ -76,7 +76,7 @@ build/GraSorw
 
 ### Get the running logs
 
-First build the executable under pure full load mode. Open the ` src/includes/engine/Settings.hpp` file and set `FULLY_LOAD` and `OUTPUT_ON_DEMAND_DATA` to 1, and set `ONDEMAND_LOAD` to 0. Then build the target. When running, add the following line in the configuration file `conf/GraSorw.cnf`:
+First build the executable under pure full load mode. Open the ` src/includes/engine/Settings.hpp` file and set `FULLY_LOAD` and `OUTPUT_FULLY_DATA` to 1, and set `ONDEMAND_LOAD` to 0. Then build the target. When running, add the following line in the configuration file `conf/GraSorw.cnf`:
 
 ```
 load-test-output-file-dynamic=conf/on-demand-th-0.csv
@@ -91,9 +91,9 @@ ths-file-dynamic=conf/ths/ths-all-1.txt
 load-test-output-file-dynamic=conf/on-demand-th-1.csv
 ```
 
-The first line indicates that the system would switch to on-demand loading when the ratio of $\mathbb{W} / N_v$ is less than 1, and the second line indicates where should the running logs be put. 
+The first line indicates that the system would switch to on-demand loading when the ratio of $\mathbb{W} / N_v$ is less than 1, and the second line indicates where should the running logs be put.
 
-After running the above two executables, the running logs should be output to folder `/conf`. 
+After running the above two executables, the running logs should be output to folder `/conf`.
 
 ### Training
 
@@ -113,7 +113,7 @@ Set the `ths-file-dynamic` in the configuration file to the generated threshold 
 ths-file-dynamic=conf/ths.txt
 ```
 
-To perform the learning-based loading model, run the target generated under`OUTPUT_ON_DEMAND_DATA`, `FULLY_LOAD` set to 0, and `ONDEMAND_LOAD` set to 1. 
+To perform the learning-based loading model, run the target generated under`OUTPUT_ON_DEMAND_DATA`, `FULLY_LOAD` set to 0, and `ONDEMAND_LOAD` set to 1.
 
 Note that the trained thresholds should be able to use in different tasks under this partition for the current graph. 
 
