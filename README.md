@@ -45,7 +45,7 @@ Meaning of arguments in `conf/GraSorw.cnf`:
 
 * Graph information
   * file: the input graph file
-  * num-vertices: the total number of vertices in the input graph. This value can be retrieved from the output log when converting the original graph to undirected.
+  * num-vertices: the total number of vertices in the input graph. On toy graphs, this value can be retrieved from the output log when converting the original graph to undirected.
   * blocksize_kb: the size of the current block and ancillary block in the engine in KiB. This is set for default sequential partitioning.
 * Run-time configuration
   * nThreads: number of threads during execution. Default value is the maximum thread number of your machine.
@@ -117,3 +117,18 @@ To perform the learning-based loading model, run the target generated under`OUTP
 
 Note that the trained thresholds should be able to use in different tasks under this partition for the current graph. 
 
+## Format of input graph
+GraSorw accepts edge list file as input. You should make sure the input edge list is sorted in the ascending order of source vertex ID. For edges with the same source vertex, they should be sorted in ascending order of destination vertex ID. 
+For graphs that exceeds the memory, you can use an external-sorting tool to sort the edge list, see https://github.com/arq5x/kway-mergesort
+
+## Switching of execution engine
+As described in our paper, GraSorw supports both second-order random walk and first-order random walk. You can switch the execution engine by modifying the micros defined in `src/includes/engine/Settings.hpp`. 
+Note that we one micro is set to 1, the other micros should be set to 0.
+### Second-order execution engine
+We have implemented four different execution engine for second-order random walks, that are:
+* Bi-block execution engine: Set `BI_BLOCK` to 1, others to 0
+* Plain-bucket execution engine: Set `PLAIN-BUCKET` to 1, others to 0
+* Second-order GraphWalker: Set `PLIAN` to 1, others to 0
+* Second-order GraphWalker with Static Cache: Set `PLAIN` and `STATICCACHE` to 1, others to 0
+### First-order execution engine
+To execute first-order random walk tasks, set `FIRST_ORDER_ENGINE` to 1 and the second-order micros to 0. 
